@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import FeatureCard from "@/components/ui/feature-card";
 import StatsCard from "@/components/ui/stats-card";
-import { Brain, TrendingUp, Zap, Lock, Check, Shield, BarChart3, ArrowUpRight, Target } from "lucide-react";
+import { Brain, TrendingUp, Zap, Lock, Check, Shield, BarChart3, ArrowUpRight, Target, Star, Users, Clock, Globe } from "lucide-react";
 import { Link } from "wouter";
 
 export default function Home() {
@@ -309,6 +309,324 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Comparison Section */}
+      <section className="py-20 fintech-gradient-light">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose FraudHunt?</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              See how we compare to traditional fraud detection solutions
+            </p>
+          </div>
+          
+          <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+            <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gray-200">
+              <div className="p-8 text-center">
+                <div className="text-gray-500 text-sm font-medium mb-4">Traditional Solutions</div>
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-gray-600">Setup Time</span>
+                    <span className="text-sm font-medium text-red-500">6-12 months</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-gray-600">False Positives</span>
+                    <span className="text-sm font-medium text-red-500">5-15%</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-gray-600">Response Time</span>
+                    <span className="text-sm font-medium text-red-500">5-10 seconds</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-gray-600">Maintenance</span>
+                    <span className="text-sm font-medium text-red-500">High</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="p-8 text-center bg-fintech-blue/5 relative">
+                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-fintech-blue text-white px-4 py-1 rounded-full text-xs font-bold">
+                  FRAUDHUNT
+                </div>
+                <div className="text-fintech-blue text-sm font-bold mb-4 mt-2">AI-Powered Solution</div>
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-gray-600">Setup Time</span>
+                    <span className="text-sm font-bold text-fintech-blue">24 hours</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-gray-600">False Positives</span>
+                    <span className="text-sm font-bold text-fintech-blue">0.2%</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-gray-600">Response Time</span>
+                    <span className="text-sm font-bold text-fintech-blue">&lt; 50ms</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-gray-600">Maintenance</span>
+                    <span className="text-sm font-bold text-fintech-blue">Automated</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="p-8 text-center">
+                <div className="text-gray-500 text-sm font-medium mb-4">In-House Development</div>
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-gray-600">Setup Time</span>
+                    <span className="text-sm font-medium text-red-500">12-24 months</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-gray-600">Development Cost</span>
+                    <span className="text-sm font-medium text-red-500">$2M+</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-gray-600">Team Required</span>
+                    <span className="text-sm font-medium text-red-500">20+ engineers</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-gray-600">Ongoing Costs</span>
+                    <span className="text-sm font-medium text-red-500">Very High</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Integration Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Quick & Easy Setup</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Integrate with your existing payment infrastructure in minutes
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="space-y-8">
+                <div className="flex items-start">
+                  <div className="bg-fintech-blue rounded-full p-2 mr-4 mt-1">
+                    <div className="text-white text-sm font-bold w-6 h-6 flex items-center justify-center">1</div>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">API Integration</h3>
+                    <p className="text-gray-600">Simple REST API integration with comprehensive documentation and SDKs for popular programming languages.</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="bg-fintech-purple rounded-full p-2 mr-4 mt-1">
+                    <div className="text-white text-sm font-bold w-6 h-6 flex items-center justify-center">2</div>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Configure Rules</h3>
+                    <p className="text-gray-600">Set up custom fraud detection rules and thresholds tailored to your business needs and risk tolerance.</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="bg-fintech-cyan rounded-full p-2 mr-4 mt-1">
+                    <div className="text-white text-sm font-bold w-6 h-6 flex items-center justify-center">3</div>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Go Live</h3>
+                    <p className="text-gray-600">Start protecting your transactions immediately with real-time fraud detection and automated decision making.</p>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-8">
+                <Link href="/contact">
+                  <Button className="fintech-gradient text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-200">
+                    Start Integration
+                  </Button>
+                </Link>
+              </div>
+            </div>
+            
+            <div className="relative">
+              <div className="bg-gray-900 rounded-lg p-6 text-green-400 font-mono text-sm">
+                <div className="mb-4">
+                  <span className="text-gray-500"># Install FraudHunt SDK</span>
+                </div>
+                <div className="mb-2">npm install fraudhunt-sdk</div>
+                <div className="mb-4">
+                  <span className="text-gray-500"># Initialize with your API key</span>
+                </div>
+                <div className="mb-2">const fraudhunt = new FraudHunt(API_KEY);</div>
+                <div className="mb-4">
+                  <span className="text-gray-500"># Check transaction</span>
+                </div>
+                <div className="mb-2">const result = await fraudhunt.analyze({`{`}</div>
+                <div className="mb-2 ml-4">amount: 1000,</div>
+                <div className="mb-2 ml-4">userId: "user123",</div>
+                <div className="mb-2 ml-4">paymentMethod: "card"</div>
+                <div className="mb-2">{`});`}</div>
+                <div className="mt-4">
+                  <span className="text-blue-400">// Result: {`{ risk: "low", confidence: 0.98 }`}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-20 fintech-gradient-light">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Trusted by Industry Leaders</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              See what our customers say about their experience with FraudHunt
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-white rounded-xl p-8 shadow-lg">
+              <div className="flex items-center mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                ))}
+              </div>
+              <p className="text-gray-600 mb-6">
+                "FraudHunt reduced our false positives by 90% while catching more actual fraud. The ROI was immediate."
+              </p>
+              <div className="flex items-center">
+                <img 
+                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100" 
+                  alt="CEO" 
+                  className="w-12 h-12 rounded-full mr-4"
+                />
+                <div>
+                  <div className="font-semibold text-gray-900">Michael Chen</div>
+                  <div className="text-sm text-gray-500">CEO, PayFlow</div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-xl p-8 shadow-lg">
+              <div className="flex items-center mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                ))}
+              </div>
+              <p className="text-gray-600 mb-6">
+                "Integration was seamless. We were up and running in less than a day with full fraud protection."
+              </p>
+              <div className="flex items-center">
+                <img 
+                  src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100" 
+                  alt="CTO" 
+                  className="w-12 h-12 rounded-full mr-4"
+                />
+                <div>
+                  <div className="font-semibold text-gray-900">Sarah Martinez</div>
+                  <div className="text-sm text-gray-500">CTO, FinanceHub</div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-xl p-8 shadow-lg">
+              <div className="flex items-center mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                ))}
+              </div>
+              <p className="text-gray-600 mb-6">
+                "The AI learns our transaction patterns and gets smarter over time. It's like having a fraud expert on our team."
+              </p>
+              <div className="flex items-center">
+                <img 
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100" 
+                  alt="VP" 
+                  className="w-12 h-12 rounded-full mr-4"
+                />
+                <div>
+                  <div className="font-semibold text-gray-900">David Kim</div>
+                  <div className="text-sm text-gray-500">VP Risk, TechBank</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Global Coverage Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-4xl font-bold text-gray-900 mb-6">Global Fraud Protection</h2>
+              <p className="text-xl text-gray-600 mb-8">
+                Protect your business worldwide with our comprehensive fraud detection network covering 190+ countries.
+              </p>
+              <div className="grid grid-cols-2 gap-6 mb-8">
+                <div className="text-center p-4 bg-fintech-blue/5 rounded-lg">
+                  <Globe className="text-fintech-blue w-8 h-8 mx-auto mb-2" />
+                  <div className="text-2xl font-bold text-fintech-blue">190+</div>
+                  <div className="text-sm text-gray-600">Countries Covered</div>
+                </div>
+                <div className="text-center p-4 bg-fintech-purple/5 rounded-lg">
+                  <Users className="text-fintech-purple w-8 h-8 mx-auto mb-2" />
+                  <div className="text-2xl font-bold text-fintech-purple">500M+</div>
+                  <div className="text-sm text-gray-600">Users Protected</div>
+                </div>
+                <div className="text-center p-4 bg-fintech-cyan/5 rounded-lg">
+                  <Clock className="text-fintech-cyan w-8 h-8 mx-auto mb-2" />
+                  <div className="text-2xl font-bold text-fintech-cyan">24/7</div>
+                  <div className="text-sm text-gray-600">Monitoring</div>
+                </div>
+                <div className="text-center p-4 bg-green-100 rounded-lg">
+                  <Shield className="text-green-600 w-8 h-8 mx-auto mb-2" />
+                  <div className="text-2xl font-bold text-green-600">99.9%</div>
+                  <div className="text-sm text-gray-600">Uptime SLA</div>
+                </div>
+              </div>
+            </div>
+            <div className="relative">
+              <img 
+                src="https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                alt="Global network visualization" 
+                className="rounded-xl shadow-2xl"
+              />
+              <div className="absolute inset-0 bg-fintech-blue/20 rounded-xl flex items-center justify-center">
+                <div className="text-center text-white">
+                  <Globe className="w-16 h-16 mx-auto mb-4 animate-pulse-slow" />
+                  <div className="text-2xl font-bold">Worldwide Protection</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA Section */}
+      <section className="py-20 fintech-gradient">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl font-bold text-white mb-6">
+            Ready to Stop Fraud and Unlock Revenue?
+          </h2>
+          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+            Join hundreds of companies already protecting their business with FraudHunt's AI-powered fraud detection.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/contact">
+              <Button className="bg-white text-fintech-blue px-8 py-4 rounded-lg font-semibold hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                Start Free Trial
+              </Button>
+            </Link>
+            <Link href="/pricing">
+              <Button variant="outline" className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-fintech-blue transition-all duration-300">
+                View Pricing
+              </Button>
+            </Link>
+          </div>
+          <div className="mt-8 text-blue-200 text-sm">
+            No setup fees • Cancel anytime • 24/7 support
           </div>
         </div>
       </section>
