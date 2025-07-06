@@ -6,7 +6,6 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 import Home from "@/pages/home";
-import Results from "@/pages/results";
 import Team from "@/pages/team";
 import Pricing from "@/pages/pricing";
 import Contact from "@/pages/contact";
@@ -19,7 +18,6 @@ function Router() {
       <main className="flex-1">
         <Switch>
           <Route path="/" component={Home} />
-          <Route path="/results" component={Results} />
           <Route path="/team" component={Team} />
           <Route path="/pricing" component={Pricing} />
           <Route path="/contact" component={Contact} />

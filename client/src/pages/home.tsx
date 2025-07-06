@@ -28,9 +28,9 @@ export default function Home() {
                     Request Demo
                   </Button>
                 </Link>
-                <Link href="/results">
+                <Link href="/pricing">
                   <Button variant="outline" className="border-2 border-fintech-blue text-fintech-blue px-8 py-3 rounded-lg font-semibold hover:bg-fintech-blue hover:text-white transition-all duration-300">
-                    View Results
+                    View Pricing
                   </Button>
                 </Link>
               </div>
@@ -172,59 +172,82 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Interactive Chart Section */}
+          {/* Performance Metrics */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-            <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 animate-slide-up">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Fraud Detection Over Time</h3>
-              <div className="relative h-64">
-                <div className="absolute inset-0 bg-gradient-to-r from-fintech-blue/10 to-fintech-purple/10 rounded-lg flex items-end justify-center">
-                  <div className="flex items-end space-x-3 h-full w-full p-4">
-                    <div className="bg-fintech-blue w-8 h-16 rounded-t chart-bar hover:bg-fintech-purple transition-colors duration-300 cursor-pointer" title="Jan: 85%"></div>
-                    <div className="bg-fintech-blue w-8 h-20 rounded-t chart-bar hover:bg-fintech-purple transition-colors duration-300 cursor-pointer" title="Feb: 87%"></div>
-                    <div className="bg-fintech-blue w-8 h-24 rounded-t chart-bar hover:bg-fintech-purple transition-colors duration-300 cursor-pointer" title="Mar: 91%"></div>
-                    <div className="bg-fintech-blue w-8 h-32 rounded-t chart-bar hover:bg-fintech-purple transition-colors duration-300 cursor-pointer" title="Apr: 93%"></div>
-                    <div className="bg-fintech-blue w-8 h-40 rounded-t chart-bar hover:bg-fintech-purple transition-colors duration-300 cursor-pointer" title="May: 96%"></div>
-                    <div className="bg-fintech-blue w-8 h-48 rounded-t chart-bar hover:bg-fintech-purple transition-colors duration-300 cursor-pointer" title="Jun: 97%"></div>
-                    <div className="bg-fintech-purple w-8 h-52 rounded-t chart-bar hover:bg-fintech-cyan transition-colors duration-300 cursor-pointer" title="Jul: 98%"></div>
-                    <div className="bg-fintech-purple w-8 h-56 rounded-t chart-bar hover:bg-fintech-cyan transition-colors duration-300 cursor-pointer" title="Aug: 99%"></div>
-                  </div>
-                </div>
-                <div className="absolute bottom-2 left-4 right-4 flex justify-between text-xs text-gray-500">
-                  <span>Jan</span>
-                  <span>Feb</span>
-                  <span>Mar</span>
-                  <span>Apr</span>
-                  <span>May</span>
-                  <span>Jun</span>
-                  <span>Jul</span>
-                  <span>Aug</span>
+            <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+              <div className="flex items-center justify-between mb-6">
+                <h3 className="text-2xl font-bold text-gray-900">Detection Performance</h3>
+                <div className="bg-fintech-blue/10 rounded-lg p-2">
+                  <TrendingUp className="text-fintech-blue w-6 h-6" />
                 </div>
               </div>
-              <div className="mt-4 text-center">
-                <div className="text-sm text-gray-600">Monthly fraud detection rate improvement</div>
-                <div className="text-2xl font-bold text-fintech-blue mt-2 animate-pulse-slow">+23% this quarter</div>
+              <div className="space-y-6">
+                <div>
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="text-sm font-medium text-gray-600">Accuracy Rate</span>
+                    <span className="text-sm font-bold text-fintech-blue">99.8%</span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-2">
+                    <div className="bg-gradient-to-r from-fintech-blue to-fintech-purple h-2 rounded-full" style={{width: '99.8%'}}></div>
+                  </div>
+                </div>
+                <div>
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="text-sm font-medium text-gray-600">Speed (ms)</span>
+                    <span className="text-sm font-bold text-fintech-purple">&lt; 50ms</span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-2">
+                    <div className="bg-gradient-to-r from-fintech-purple to-fintech-cyan h-2 rounded-full" style={{width: '95%'}}></div>
+                  </div>
+                </div>
+                <div>
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="text-sm font-medium text-gray-600">False Positives</span>
+                    <span className="text-sm font-bold text-green-600">0.2%</span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-2">
+                    <div className="bg-gradient-to-r from-green-500 to-green-600 h-2 rounded-full" style={{width: '98%'}}></div>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-6 p-4 bg-fintech-blue/5 rounded-lg">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-fintech-blue">Industry Leading</div>
+                  <div className="text-sm text-gray-600">Performance metrics</div>
+                </div>
               </div>
             </div>
             
-            <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 animate-slide-up">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Revenue Protection</h3>
-              <div className="relative h-64">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="relative w-48 h-48 animate-float">
-                    <div className="absolute inset-0 bg-gray-200 rounded-full"></div>
-                    <div className="absolute inset-0 bg-gradient-to-r from-fintech-blue to-fintech-purple rounded-full transition-all duration-500 hover:scale-105" style={{clipPath: 'polygon(50% 50%, 50% 0%, 100% 0%, 100% 87%, 50% 87%)'}}></div>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="text-3xl font-bold text-gray-900">$2.5B</div>
-                        <div className="text-sm text-gray-600">Protected</div>
-                      </div>
-                    </div>
-                  </div>
+            <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+              <div className="flex items-center justify-between mb-6">
+                <h3 className="text-2xl font-bold text-gray-900">Business Impact</h3>
+                <div className="bg-fintech-purple/10 rounded-lg p-2">
+                  <BarChart3 className="text-fintech-purple w-6 h-6" />
                 </div>
               </div>
-              <div className="mt-4 text-center">
-                <div className="text-sm text-gray-600">Total revenue protected across all clients</div>
-                <div className="text-2xl font-bold text-fintech-purple mt-2 animate-pulse-slow">87% of transactions</div>
+              <div className="grid grid-cols-2 gap-6 mb-6">
+                <div className="text-center p-4 bg-fintech-blue/5 rounded-lg">
+                  <div className="text-3xl font-bold text-fintech-blue mb-1">$2.5B</div>
+                  <div className="text-sm text-gray-600">Revenue Protected</div>
+                </div>
+                <div className="text-center p-4 bg-fintech-purple/5 rounded-lg">
+                  <div className="text-3xl font-bold text-fintech-purple mb-1">85%</div>
+                  <div className="text-sm text-gray-600">Fraud Reduction</div>
+                </div>
+              </div>
+              <div className="space-y-4">
+                <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                  <span className="text-sm font-medium text-gray-700">Chargebacks Prevented</span>
+                  <span className="text-sm font-bold text-fintech-cyan">78% ↑</span>
+                </div>
+                <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                  <span className="text-sm font-medium text-gray-700">Customer Approval Rate</span>
+                  <span className="text-sm font-bold text-green-600">15% ↑</span>
+                </div>
+                <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                  <span className="text-sm font-medium text-gray-700">Processing Time</span>
+                  <span className="text-sm font-bold text-fintech-blue">60% ↓</span>
+                </div>
               </div>
             </div>
           </div>
