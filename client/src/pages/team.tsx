@@ -14,17 +14,17 @@ export default function Team() {
             </p>
           </div>
 
-          {/* Leadership Team */}
+          {/* Our Team */}
           <div className="mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">Leadership</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">Our Team</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
               <TeamMember
                 name="John Smith"
                 role="CEO & Co-Founder"
                 description="Former VP at Stripe, 15+ years in fintech"
                 imageUrl="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300"
-                linkedin="https://linkedin.com"
-                twitter="https://twitter.com"
+                linkedin="https://linkedin.com/in/johnsmith"
+                twitter="https://twitter.com/johnsmith"
                 roleColor="text-fintech-blue"
               />
               <TeamMember
@@ -32,8 +32,8 @@ export default function Team() {
                 role="CTO & Co-Founder"
                 description="PhD in Machine Learning, ex-Google AI"
                 imageUrl="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300"
-                linkedin="https://linkedin.com"
-                github="https://github.com"
+                linkedin="https://linkedin.com/in/sarahjohnson"
+                github="https://github.com/sarahjohnson"
                 roleColor="text-fintech-purple"
               />
               <TeamMember
@@ -41,52 +41,27 @@ export default function Team() {
                 role="CFO"
                 description="Former Goldman Sachs, MBA from Wharton"
                 imageUrl="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300"
-                linkedin="https://linkedin.com"
-                twitter="https://twitter.com"
+                linkedin="https://linkedin.com/in/michaelchen"
+                twitter="https://twitter.com/michaelchen"
                 roleColor="text-fintech-cyan"
               />
-            </div>
-          </div>
-
-          {/* Engineering Team */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">Engineering</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <TeamMember
                 name="David Park"
                 role="Lead AI Engineer"
                 description="Stanford PhD, ML Research"
                 imageUrl="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300"
-                linkedin="https://linkedin.com"
+                linkedin="https://linkedin.com/in/davidpark"
+                github="https://github.com/davidpark"
                 roleColor="text-fintech-blue"
-                size="small"
               />
               <TeamMember
                 name="Lisa Wang"
                 role="Sr. Backend Engineer"
                 description="Ex-Facebook, Distributed Systems"
                 imageUrl="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300"
-                linkedin="https://linkedin.com"
+                linkedin="https://linkedin.com/in/lisawang"
+                github="https://github.com/lisawang"
                 roleColor="text-fintech-purple"
-                size="small"
-              />
-              <TeamMember
-                name="Alex Rodriguez"
-                role="Frontend Engineer"
-                description="UI/UX Expert, React Specialist"
-                imageUrl="https://images.unsplash.com/photo-1507591064344-4c6ce005b128?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300"
-                linkedin="https://linkedin.com"
-                roleColor="text-fintech-cyan"
-                size="small"
-              />
-              <TeamMember
-                name="Tom Wilson"
-                role="DevOps Engineer"
-                description="AWS Expert, Security Focus"
-                imageUrl="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300"
-                linkedin="https://linkedin.com"
-                roleColor="text-green-600"
-                size="small"
               />
             </div>
           </div>

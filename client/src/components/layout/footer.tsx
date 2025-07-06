@@ -1,4 +1,4 @@
-import { Shield } from "lucide-react";
+import { Shield, Github, Twitter, Linkedin } from "lucide-react";
 import { Link } from "wouter";
 
 export default function Footer() {
@@ -11,9 +11,20 @@ export default function Footer() {
               <Shield className="text-fintech-blue text-2xl mr-3 h-8 w-8" />
               <span className="text-xl font-bold">FraudHunt</span>
             </div>
-            <p className="text-gray-400 text-sm">
+            <p className="text-gray-400 text-sm mb-4">
               AI-powered fraud detection to protect your business and unlock revenue.
             </p>
+            <div className="flex space-x-4">
+              <a href="https://github.com/fraudhunt" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+                <Github className="w-5 h-5" />
+              </a>
+              <a href="https://twitter.com/fraudhunt" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+                <Twitter className="w-5 h-5" />
+              </a>
+              <a href="https://linkedin.com/company/fraudhunt" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+                <Linkedin className="w-5 h-5" />
+              </a>
+            </div>
           </div>
           <div>
             <h4 className="font-semibold mb-4">Product</h4>
@@ -29,13 +40,13 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  API Docs
-                </a>
+                <Link href="/results" className="hover:text-white transition-colors">
+                  Case Studies
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Integrations
+                <a href="https://docs.fraudhunt.ai" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                  API Documentation
                 </a>
               </li>
             </ul>
@@ -45,17 +56,17 @@ export default function Footer() {
             <ul className="space-y-2 text-sm text-gray-400">
               <li>
                 <Link href="/team" className="hover:text-white transition-colors">
-                  About
+                  About Us
                 </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="https://careers.fraudhunt.ai" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                   Careers
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Press
+                <a href="https://blog.fraudhunt.ai" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                  Blog
                 </a>
               </li>
               <li>
@@ -66,33 +77,36 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold mb-4">Support</h4>
+            <h4 className="font-semibold mb-4">Legal</h4>
             <ul className="space-y-2 text-sm text-gray-400">
               <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Help Center
+                <a href="https://fraudhunt.ai/privacy" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                  Privacy Policy
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Status
+                <a href="https://fraudhunt.ai/terms" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                  Terms of Service
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="https://fraudhunt.ai/security" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                   Security
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Privacy
+                <a href="https://status.fraudhunt.ai" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                  Status
                 </a>
               </li>
             </ul>
           </div>
         </div>
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center">
-          <p className="text-gray-400 text-sm">© 2024 FraudHunt. All rights reserved.</p>
+        <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+          <p className="text-gray-400 text-sm">© 2025 FraudHunt. All rights reserved.</p>
+          <div className="flex space-x-4 mt-4 md:mt-0">
+            <span className="text-gray-400 text-sm">Made with ❤️ in San Francisco</span>
+          </div>
         </div>
       </div>
     </footer>

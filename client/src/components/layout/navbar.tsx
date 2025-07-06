@@ -52,12 +52,11 @@ export default function Navbar() {
 
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="ghost" className="text-gray-500 hover:text-fintech-blue text-sm font-medium">
-              Log In
-            </Button>
-            <Button className="fintech-gradient text-white px-4 py-2 rounded-lg text-sm font-medium hover:shadow-lg transition-all duration-200">
-              Get Started
-            </Button>
+            <Link href="/contact">
+              <Button className="fintech-gradient text-white px-4 py-2 rounded-lg text-sm font-medium hover:shadow-lg transition-all duration-200">
+                Request Demo
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -92,12 +91,11 @@ export default function Navbar() {
                 </Link>
               ))}
               <div className="pt-4 space-y-2">
-                <Button variant="ghost" className="w-full text-gray-500 hover:text-fintech-blue">
-                  Log In
-                </Button>
-                <Button className="w-full fintech-gradient text-white">
-                  Get Started
-                </Button>
+                <Link href="/contact">
+                  <Button className="w-full fintech-gradient text-white">
+                    Request Demo
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

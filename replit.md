@@ -105,8 +105,8 @@ FraudHunt is a modern fintech application that provides AI-powered fraud detecti
 
 ## Changelog
 
-Changelog:
-- July 06, 2025. Initial setup
+- July 06, 2025 4:20 PM: Enhanced landing page with results section integration, interactive charts, improved UI animations, removed login button, updated footer with real links, reduced team to 5 members
+- July 06, 2025: Initial setup
 
 ## User Preferences
 
