@@ -1,40 +1,137 @@
 import { Button } from "@/components/ui/button";
 import FeatureCard from "@/components/ui/feature-card";
 import StatsCard from "@/components/ui/stats-card";
-import { Brain, TrendingUp, Zap, Lock, Check, Shield, BarChart3, ArrowUpRight, Target, Star, Users, Clock, Globe } from "lucide-react";
+import AnimatedCounter from "@/components/ui/animated-counter";
+import InteractiveDemo from "@/components/ui/interactive-demo";
+import InteractiveFAQ from "@/components/ui/interactive-faq";
+import ChatWidget from "@/components/ui/chat-widget";
+import { Brain, TrendingUp, Zap, Lock, Check, Shield, BarChart3, ArrowUpRight, Target, Star, Users, Clock, Globe, PlayCircle, Sparkles, Cpu, Database, Network } from "lucide-react";
 import { Link } from "wouter";
+import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 
 export default function Home() {
+  const [visibleCounters, setVisibleCounters] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisibleCounters(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    const element = document.getElementById('stats-section');
+    if (element) observer.observe(element);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div>
       {/* Hero Section */}
-      <section className="fintech-gradient-light pt-16 pb-20">
+      <motion.section 
+        className="fintech-gradient-light pt-16 pb-20 overflow-hidden"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <motion.div 
+                className="inline-flex items-center px-4 py-2 bg-fintech-blue/10 rounded-full text-fintech-blue text-sm font-medium mb-6"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.4 }}
+              >
+                <Sparkles className="w-4 h-4 mr-2" />
+                AI-Powered Fraud Detection
+              </motion.div>
+              
               <h1 className="text-5xl font-bold text-gray-900 leading-tight mb-6">
-                AI-Powered<br />
-                <span className="fintech-gradient bg-clip-text text-transparent">
+                <motion.span
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5 }}
+                >
+                  AI-Powered<br />
+                </motion.span>
+                <motion.span 
+                  className="fintech-gradient bg-clip-text text-transparent"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.7 }}
+                >
                   Fraud Detection
-                </span><br />
-                To Unlock Revenue
+                </motion.span><br />
+                <motion.span
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.9 }}
+                >
+                  To Unlock Revenue
+                </motion.span>
               </h1>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+              
+              <motion.p 
+                className="text-xl text-gray-600 mb-8 leading-relaxed"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.1 }}
+              >
                 Automated payment optimization and fraud prevention built into the FraudHunt Intelligence with advanced AI algorithms.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 mb-8">
+              </motion.p>
+              
+              <motion.div 
+                className="flex flex-col sm:flex-row gap-4 mb-8"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.3 }}
+              >
                 <Link href="/contact">
-                  <Button className="fintech-gradient text-white px-8 py-3 rounded-lg font-semibold hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                    Request Demo
-                  </Button>
+                  <motion.div
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Button className="fintech-gradient text-white px-8 py-3 rounded-lg font-semibold hover:shadow-xl transition-all duration-300 group relative overflow-hidden">
+                      <span className="relative z-10 flex items-center">
+                        <PlayCircle className="w-5 h-5 mr-2" />
+                        Request Demo
+                      </span>
+                      <motion.div
+                        className="absolute inset-0 bg-white/20"
+                        initial={{ x: "-100%" }}
+                        whileHover={{ x: "100%" }}
+                        transition={{ duration: 0.6 }}
+                      />
+                    </Button>
+                  </motion.div>
                 </Link>
                 <Link href="/pricing">
-                  <Button variant="outline" className="border-2 border-fintech-blue text-fintech-blue px-8 py-3 rounded-lg font-semibold hover:bg-fintech-blue hover:text-white transition-all duration-300">
-                    View Pricing
-                  </Button>
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Button variant="outline" className="border-2 border-fintech-blue text-fintech-blue px-8 py-3 rounded-lg font-semibold hover:bg-fintech-blue hover:text-white transition-all duration-300">
+                      View Pricing
+                    </Button>
+                  </motion.div>
                 </Link>
-              </div>
-              <div className="flex items-center space-x-6 text-sm text-gray-500">
+              </motion.div>
+              
+              <motion.div 
+                className="flex items-center space-x-6 text-sm text-gray-500"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1.5 }}
+              >
                 <div className="flex items-center">
                   <Check className="text-green-500 mr-2 w-4 h-4" />
                   <span>No setup fee</span>
@@ -43,17 +140,34 @@ export default function Home() {
                   <Check className="text-green-500 mr-2 w-4 h-4" />
                   <span>Cancel anytime</span>
                 </div>
-              </div>
-            </div>
-            <div className="relative">
-              <img 
+              </motion.div>
+            </motion.div>
+            
+            <motion.div 
+              className="relative"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              <motion.img 
                 src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
                 alt="Fraud detection dashboard" 
-                className="rounded-xl shadow-2xl hover:shadow-3xl transition-all duration-300 animate-float"
+                className="rounded-xl shadow-2xl hover:shadow-3xl transition-all duration-300"
+                whileHover={{ scale: 1.02 }}
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
               />
-              <div className="absolute -bottom-6 -left-6 bg-white rounded-lg shadow-lg p-4 animate-slide-up">
+              
+              {/* Floating Stats */}
+              <motion.div 
+                className="absolute -bottom-6 -left-6 bg-white rounded-lg shadow-xl p-4 border border-gray-100"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.5 }}
+                whileHover={{ scale: 1.05 }}
+              >
                 <div className="flex items-center space-x-3">
-                  <div className="bg-green-100 rounded-full p-2 animate-pulse-slow">
+                  <div className="bg-green-100 rounded-full p-2 animate-pulse">
                     <Lock className="text-green-600 w-5 h-5" />
                   </div>
                   <div>
@@ -61,116 +175,257 @@ export default function Home() {
                     <p className="text-xs text-gray-500">Fraud Detection Rate</p>
                   </div>
                 </div>
-              </div>
-              <div className="absolute -top-4 -right-4 bg-fintech-blue rounded-lg shadow-lg p-3 animate-slide-up">
+              </motion.div>
+              
+              <motion.div 
+                className="absolute -top-4 -right-4 bg-fintech-blue rounded-lg shadow-xl p-3 border border-fintech-blue/20"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.7 }}
+                whileHover={{ scale: 1.05 }}
+              >
                 <div className="flex items-center space-x-2">
                   <Target className="text-white w-4 h-4" />
                   <span className="text-white text-xs font-semibold">Real-time</span>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+              
+              {/* AI Processing Visualization */}
+              <motion.div 
+                className="absolute top-1/2 right-8 bg-white/90 backdrop-blur-sm rounded-lg shadow-lg p-3 border border-gray-200"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 1.9 }}
+              >
+                <div className="flex items-center space-x-2">
+                  <motion.div
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                  >
+                    <Cpu className="text-fintech-purple w-5 h-5" />
+                  </motion.div>
+                  <div>
+                    <p className="text-xs font-semibold text-gray-900">AI Processing</p>
+                    <p className="text-xs text-gray-500">&lt; 50ms</p>
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
+
+      {/* Interactive Demo Section */}
+      <motion.section 
+        className="py-20 bg-gray-50"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <motion.h2 
+              className="text-4xl font-bold text-gray-900 mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              Experience AI in Action
+            </motion.h2>
+            <motion.p 
+              className="text-xl text-gray-600 max-w-3xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
+              See how FraudHunt's AI analyzes transactions and detects fraud patterns in real-time
+            </motion.p>
+          </div>
+          <InteractiveDemo />
+        </div>
+      </motion.section>
 
       {/* Trusted Partners */}
-      <section className="py-16 bg-white">
+      <motion.section 
+        className="py-16 bg-white"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-gray-500 text-sm font-medium mb-8">TRUSTED BY LEADING FINANCIAL INSTITUTIONS</p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center opacity-60">
-            <div className="flex justify-center">
-              <img src="https://cdn.worldvectorlogo.com/logos/stripe-4.svg" alt="Stripe" className="h-8" />
-            </div>
-            <div className="flex justify-center">
-              <img src="https://cdn.worldvectorlogo.com/logos/visa-2.svg" alt="Visa" className="h-8" />
-            </div>
-            <div className="flex justify-center">
-              <img src="https://cdn.worldvectorlogo.com/logos/mastercard-2.svg" alt="Mastercard" className="h-8" />
-            </div>
-            <div className="flex justify-center">
-              <img src="https://cdn.worldvectorlogo.com/logos/paypal-2.svg" alt="PayPal" className="h-8" />
-            </div>
-          </div>
+          <motion.div 
+            className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            {[
+              { src: "https://cdn.worldvectorlogo.com/logos/stripe-4.svg", alt: "Stripe" },
+              { src: "https://cdn.worldvectorlogo.com/logos/visa-2.svg", alt: "Visa" },
+              { src: "https://cdn.worldvectorlogo.com/logos/mastercard-2.svg", alt: "Mastercard" },
+              { src: "https://cdn.worldvectorlogo.com/logos/paypal-2.svg", alt: "PayPal" }
+            ].map((logo, index) => (
+              <motion.div 
+                key={logo.alt}
+                className="flex justify-center opacity-60 hover:opacity-100 transition-opacity duration-200"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 0.6, y: 0 }}
+                whileHover={{ opacity: 1, scale: 1.1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <img src={logo.src} alt={logo.alt} className="h-8" />
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Features Section */}
-      <section className="py-20 fintech-gradient-light">
+      <motion.section 
+        className="py-20 fintech-gradient-light"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Everything you need to fight fraud</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Comprehensive fraud prevention tools built for modern financial operations</p>
+            <motion.h2 
+              className="text-4xl font-bold text-gray-900 mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              Everything you need to fight fraud
+            </motion.h2>
+            <motion.p 
+              className="text-xl text-gray-600 max-w-3xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
+              Comprehensive fraud prevention tools built for modern financial operations
+            </motion.p>
           </div>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="transform hover:scale-105 transition-all duration-300">
-              <FeatureCard
-                icon={<Brain className="text-fintech-blue text-xl w-6 h-6" />}
-                title="AI Detection"
-                description="Advanced machine learning algorithms detect fraudulent patterns in real-time"
-                iconBgColor="bg-blue-100"
-              />
-            </div>
-            <div className="transform hover:scale-105 transition-all duration-300">
-              <FeatureCard
-                icon={<TrendingUp className="text-fintech-purple text-xl w-6 h-6" />}
-                title="Analytics"
-                description="Comprehensive reporting and insights to optimize your fraud prevention"
-                iconBgColor="bg-purple-100"
-              />
-            </div>
-            <div className="transform hover:scale-105 transition-all duration-300">
-              <FeatureCard
-                icon={<Zap className="text-fintech-cyan text-xl w-6 h-6" />}
-                title="Real-time"
-                description="Instant fraud detection and prevention with millisecond response times"
-                iconBgColor="bg-cyan-100"
-              />
-            </div>
-            <div className="transform hover:scale-105 transition-all duration-300">
-              <FeatureCard
-                icon={<Lock className="text-green-600 text-xl w-6 h-6" />}
-                title="Secure"
-                description="Bank-level security with encryption and compliance standards"
-                iconBgColor="bg-green-100"
-              />
-            </div>
+            {[
+              {
+                icon: <Brain className="text-fintech-blue text-xl w-6 h-6" />,
+                title: "AI Detection",
+                description: "Advanced machine learning algorithms detect fraudulent patterns in real-time",
+                iconBgColor: "bg-blue-100",
+                delay: 0
+              },
+              {
+                icon: <TrendingUp className="text-fintech-purple text-xl w-6 h-6" />,
+                title: "Analytics",
+                description: "Comprehensive reporting and insights to optimize your fraud prevention",
+                iconBgColor: "bg-purple-100",
+                delay: 0.1
+              },
+              {
+                icon: <Zap className="text-fintech-cyan text-xl w-6 h-6" />,
+                title: "Real-time",
+                description: "Instant fraud detection and prevention with millisecond response times",
+                iconBgColor: "bg-cyan-100",
+                delay: 0.2
+              },
+              {
+                icon: <Lock className="text-green-600 text-xl w-6 h-6" />,
+                title: "Secure",
+                description: "Bank-level security with encryption and compliance standards",
+                iconBgColor: "bg-green-100",
+                delay: 0.3
+              }
+            ].map((feature, index) => (
+              <motion.div 
+                key={feature.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: feature.delay }}
+                whileHover={{ y: -5 }}
+              >
+                <FeatureCard
+                  icon={feature.icon}
+                  title={feature.title}
+                  description={feature.description}
+                  iconBgColor={feature.iconBgColor}
+                />
+              </motion.div>
+            ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      {/* Results Section */}
-      <section className="py-20 bg-white">
+      {/* Results Section with Animated Counters */}
+      <motion.section 
+        id="stats-section" 
+        className="py-20 bg-white"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Proven Results</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <motion.h2 
+              className="text-4xl font-bold text-gray-900 mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              Proven Results
+            </motion.h2>
+            <motion.p 
+              className="text-xl text-gray-600 max-w-3xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
               See how FraudHunt has helped businesses reduce fraud and increase revenue
-            </p>
+            </motion.p>
           </div>
 
-          {/* Key Metrics */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-            <div className="bg-white rounded-xl p-6 shadow-lg text-center hover:shadow-xl transition-all duration-300 border-l-4 border-fintech-blue">
-              <div className="text-3xl font-bold text-fintech-blue mb-2">0.20%</div>
-              <div className="text-gray-600 text-sm font-medium">False Positive Rate</div>
-              <div className="text-xs text-gray-500 mt-1">Industry avg: 5%</div>
-            </div>
-            <div className="bg-white rounded-xl p-6 shadow-lg text-center hover:shadow-xl transition-all duration-300 border-l-4 border-fintech-purple">
-              <div className="text-3xl font-bold text-fintech-purple mb-2">5%</div>
-              <div className="text-gray-600 text-sm font-medium">Revenue Increase</div>
-              <div className="text-xs text-gray-500 mt-1">Average across clients</div>
-            </div>
-            <div className="bg-white rounded-xl p-6 shadow-lg text-center hover:shadow-xl transition-all duration-300 border-l-4 border-fintech-cyan">
-              <div className="text-3xl font-bold text-fintech-cyan mb-2">99.8%</div>
-              <div className="text-gray-600 text-sm font-medium">Detection Accuracy</div>
-              <div className="text-xs text-gray-500 mt-1">Continuously improving</div>
-            </div>
-            <div className="bg-white rounded-xl p-6 shadow-lg text-center hover:shadow-xl transition-all duration-300 border-l-4 border-green-600">
-              <div className="text-3xl font-bold text-green-600 mb-2">85%</div>
-              <div className="text-gray-600 text-sm font-medium">Fraud Reduction</div>
-              <div className="text-xs text-gray-500 mt-1">First 30 days</div>
-            </div>
-          </div>
+          {/* Key Metrics with Animated Counters */}
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            {[
+              { value: 0.20, suffix: "%", label: "False Positive Rate", sublabel: "Industry avg: 5%", color: "fintech-blue" },
+              { value: 5, suffix: "%", label: "Revenue Increase", sublabel: "Average across clients", color: "fintech-purple" },
+              { value: 99.8, suffix: "%", label: "Detection Accuracy", sublabel: "Continuously improving", color: "fintech-cyan" },
+              { value: 85, suffix: "%", label: "Fraud Reduction", sublabel: "First 30 days", color: "green-600" }
+            ].map((stat, index) => (
+              <motion.div
+                key={stat.label}
+                className={`bg-white rounded-xl p-6 shadow-lg text-center hover:shadow-xl transition-all duration-300 border-l-4 border-${stat.color}`}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                whileHover={{ scale: 1.05 }}
+              >
+                <div className={`text-3xl font-bold text-${stat.color} mb-2`}>
+                  <AnimatedCounter 
+                    value={stat.value} 
+                    suffix={stat.suffix}
+                    isVisible={visibleCounters}
+                  />
+                </div>
+                <div className="text-gray-600 text-sm font-medium">{stat.label}</div>
+                <div className="text-xs text-gray-500 mt-1">{stat.sublabel}</div>
+              </motion.div>
+            ))}
+          </motion.div>
 
           {/* Performance Metrics */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
@@ -311,7 +566,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
+
+      {/* Add the FAQ Section */}
+      <InteractiveFAQ />
 
       {/* Comparison Section */}
       <section className="py-20 fintech-gradient-light">
@@ -605,31 +863,82 @@ export default function Home() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="py-20 fintech-gradient">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">
-            Ready to Stop Fraud and Unlock Revenue?
-          </h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Join hundreds of companies already protecting their business with FraudHunt's AI-powered fraud detection.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact">
-              <Button className="bg-white text-fintech-blue px-8 py-4 rounded-lg font-semibold hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                Start Free Trial
-              </Button>
-            </Link>
-            <Link href="/pricing">
-              <Button variant="outline" className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-fintech-blue transition-all duration-300">
-                View Pricing
-              </Button>
-            </Link>
+      <motion.section 
+        className="py-20 fintech-gradient relative overflow-hidden"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 left-10">
+            <Network className="w-32 h-32 text-white animate-pulse" />
           </div>
-          <div className="mt-8 text-blue-200 text-sm">
-            No setup fees • Cancel anytime • 24/7 support
+          <div className="absolute bottom-10 right-10">
+            <Database className="w-24 h-24 text-white animate-pulse" />
           </div>
         </div>
-      </section>
+        
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <motion.h2 
+            className="text-4xl font-bold text-white mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            Ready to Stop Fraud and Unlock Revenue?
+          </motion.h2>
+          <motion.p 
+            className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+          >
+            Join hundreds of companies already protecting their business with FraudHunt's AI-powered fraud detection.
+          </motion.p>
+          <motion.div 
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+          >
+            <Link href="/contact">
+              <motion.div
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Button className="bg-white text-fintech-blue px-8 py-4 rounded-lg font-semibold hover:shadow-xl transition-all duration-300">
+                  Start Free Trial
+                </Button>
+              </motion.div>
+            </Link>
+            <Link href="/pricing">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Button variant="outline" className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-fintech-blue transition-all duration-300">
+                  View Pricing
+                </Button>
+              </motion.div>
+            </Link>
+          </motion.div>
+          <motion.div 
+            className="mt-8 text-blue-200 text-sm"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.6 }}
+          >
+            No setup fees • Cancel anytime • 24/7 support
+          </motion.div>
+        </div>
+      </motion.section>
+
+      {/* Chat Widget */}
+      <ChatWidget />
     </div>
   );
 }
